@@ -1,0 +1,34 @@
+{
+  "todos": [
+    {
+      "id": 1,
+      "name": "Have meeting with boss",
+      "completed": false,
+      "color": "green"
+    },
+    {
+      "id": 2,
+      "name": "Have to go for shopping ",
+      "completed": true,
+      "color": "red"
+    },
+    {
+      "id": 3,
+      "name": "Needs to prepare launch",
+      "completed": false,
+      "color": "red"
+    },
+    {
+      "id": 4,
+      "name": "Needs to clean yard",
+      "completed": false,
+      "color": "yellow"
+    },
+    {
+      "id": 5,
+      "name": "Movie nights with friends",
+      "completed": true,
+      "color": "green"
+    }
+  ]
+}

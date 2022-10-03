@@ -8,29 +8,7 @@ import {
   TOGGLED,
   LOADED,
 } from './actionTypes';
-
-const initialState = {
-  todos: [
-    {
-      id: 1,
-      name: 'Have meeting with boss',
-      completed: false,
-      color: 'green',
-    },
-    {
-      id: 2,
-      name: 'Have to go for shopping ',
-      completed: true,
-      color: 'red',
-    },
-    {
-      id: 3,
-      name: 'Needs to prepare launch',
-      completed: false,
-      color: 'red',
-    },
-  ],
-};
+import initialState from './initialState';
 
 const nextTodoID = (todos) => {
   const maxID = todos.reduce((maxID, todo) => Math.max(todo.id, maxID), -1);
@@ -73,7 +51,17 @@ const reducer = (state = initialState, action) => {
       });
     case DELETED:
       return state.filter((todo) => todo.id !== action.payload);
+    case ALLCOMPLETE:
+      return state.map((todo) => {
+        return {
+          ...todo,
+          completed: true,
+        };
+      });
+    case CLEARCOMPLETED:
+      return state.map((todo) => !todo.completed);
     default:
-      break;
+      return state;
   }
 };
+export default reducer;

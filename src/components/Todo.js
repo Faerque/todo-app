@@ -2,7 +2,8 @@ import React from 'react';
 import cancelImage from '../assets/images/cancel.png';
 import editImage from '../assets/images/edit.png';
 
-export default function Todo() {
+export default function Todo({ todo }) {
+  const { id, name, completed, color } = todo;
   return (
     <div className="flex justify-start items-center p-2 hover:bg-gray-100 hover:transition-all space-x-4 border-b border-gray-400/20 last:border-0">
       <div
@@ -23,7 +24,7 @@ export default function Todo() {
         <input
           className="w-full"
           type="text"
-          //   value={text}
+          value={name}
           //   disabled={disableButton}
         ></input>
       </div>
